@@ -14,13 +14,6 @@ $git clone https://github.com/jmolivas/orm.dev.git
 $composer install 
 ````
 
-#### Config parameters
-````
-$mv app/config/parameters.yml.dist app/config/parameters.yml
-
-/* Set you db credentials */
-````
-
 #### Create database & schema
 ````
 $app/console doctrine:database:create  
