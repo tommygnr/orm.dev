@@ -1,0 +1,14 @@
+article_index:
+  path: /articles
+  defaults:
+    _controller:  ORMDemoBundle:Article:index
+
+article_array_index:
+  path: /articles-array
+  defaults:
+    _controller:  ORMDemoBundle:Article:indexAsArray
+
+article_category:
+  path: /articles-optimized
+  defaults:
+    _controller:  ORMDemoBundle:Article:articlesOptimized

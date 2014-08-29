@@ -1,0 +1,47 @@
+{% extends 'ORMDemoBundle::base.html.twig' %}
+
+{% block heading %} Article list {% endblock %}
+
+{% block body %}
+  {% for article in articles %}
+
+    {% include 'ORMDemoBundle:Article:article-dump.html.twig' %}
+
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#">{{ article.title }}</a>
+      </div>
+
+      <div class="col-md-12">
+        {{ article.body }}
+      </div>
+
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-1">
+            <strong>Category:</strong>
+          </div>
+          <div class="col-md-11">
+            {{ article.category.name }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-1">
+            <strong>Tags:</strong>
+          </div>
+          <div class="col-md-11">
+            {% for tag in article.tags %}
+              {{ tag.name }} {%- if loop.last == false -%}, {%- endif -%}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+  {% endfor %}
+{% endblock %}

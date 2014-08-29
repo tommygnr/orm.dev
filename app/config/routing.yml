@@ -1,0 +1,3 @@
+orm_demo:
+  resource: "@ORMDemoBundle/Resources/config/routing.yml"
+  prefix: /
