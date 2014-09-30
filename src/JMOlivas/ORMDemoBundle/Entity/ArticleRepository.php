@@ -35,6 +35,20 @@ class ArticleRepository extends EntityRepository
     return $query->getArrayResult();
   }
 
+  public function findAllTom(){
+
+    $queryBuilder = $this->createQueryBuilder('a');
+
+    $query = $queryBuilder
+      ->leftJoin('a.category', 'c')
+      ->leftJoin('a.tags', 't')
+      ->addSelect('c')
+      ->addSelect('t')
+      ->getQuery();
+
+    return $query->getResult();
+  }
+
   public function findTagsByArticle($articleKeys){
 
     $queryBuilder = $this->getQueryBuilder();

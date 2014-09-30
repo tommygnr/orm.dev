@@ -49,6 +49,17 @@ class ArticleController extends Controller{
     );
   }
 
+  public function articlesTomAction(){
+    $entityManager = $this->getDoctrine()->getManager();
+
+    $articles = $entityManager->getRepository('ORMDemoBundle:Article')->findAllTom();
+
+    return $this->render(
+      'ORMDemoBundle:Article:index.html.twig',
+      ['articles' => $articles]
+    );
+  }
+
   private function getTags($entityManager, $articles){
     $articleKeys = array_column($articles, 'id');
 

@@ -12,3 +12,8 @@ article_category:
   path: /articles-optimized
   defaults:
     _controller:  ORMDemoBundle:Article:articlesOptimized
+
+article_tom:
+  path: /articles-tom
+  defaults:
+    _controller:  ORMDemoBundle:Article:articlesTom
